@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+  <link href="https://cdn.bootcss.com/bulma/0.7.1/css/bulma.min.css" rel="stylesheet">
+  <title>vue-markdown</title>
+</head>
+
+<body>
+  <noscript>
+    <strong>We're sorry but vue-markdown doesn't work properly without JavaScript enabled. Please enable it to
+      continue.</strong>
+  </noscript>
+  <div id="app"></div>
+  <script>
+    /*拖拽的目标对象------ document 监听drop 并防止浏览器打开客户端的图片*/
+    document.ondragover = function (e) {
+      e.preventDefault(); //只有在ondragover中阻止默认行为才能触发 ondrop 而不是 ondragleave
+    };
+    document.ondrop = function (e) {
+      e.preventDefault(); //阻止 document.ondrop的默认行为  *** 在新窗口中打开拖进的图片
+    };
+  </script>
+  <!-- built files will be auto injected -->
+</body>
+
+</html>
